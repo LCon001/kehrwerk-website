@@ -26,14 +26,6 @@
     if (event.key === "Escape") setMenu(false);
   });
 
-  const demoBox = document.getElementById("demo");
-  document.querySelectorAll(".js-demo").forEach(function (link) {
-    link.addEventListener("click", function () {
-      if (demoBox) demoBox.checked = true;
-      setMenu(false);
-    });
-  });
-
   const bundesland = document.querySelector('select[name="Bundesland"]');
   if (bundesland) {
     bundesland.addEventListener("change", function () {
@@ -49,46 +41,36 @@
     event.preventDefault();
     if (!form.reportValidity()) return;
 
-    const honey = form.querySelector('[name="_honey"]');
-    if (honey && honey.value) return;
-
-    const submit = form.querySelector('[type="submit"]');
-    const fields = form.querySelector(".fields");
     const data = Object.fromEntries(new FormData(form).entries());
-    data["Live-Demo"] = demoBox && demoBox.checked ? "Ja" : "Nein";
-    const contact = data.Kontakt || "";
-    if (contact.indexOf("@") !== -1) data._replyto = contact;
-    delete data._honey;
+    const lines = [
+      "Guten Tag,",
+      "",
+      "ich möchte ein Angebot für Kehrwerk anfordern.",
+      "",
+      "Name: " + (data.Name || ""),
+      "Betrieb: " + (data.Betrieb || ""),
+      "E-Mail: " + (data["E-Mail"] || ""),
+      "Telefon: " + (data.Telefon || "")
+    ];
+    if (data.Bundesland) lines.push("Bundesland: " + data.Bundesland);
+    if (data["Mitarbeiter mit Login"]) lines.push("Mitarbeiter mit Login: " + data["Mitarbeiter mit Login"]);
+    if (data["Bisherige Software"]) lines.push("Bisherige Software: " + data["Bisherige Software"]);
+    if (data.Nachricht) lines.push("", "Nachricht:", data.Nachricht);
 
-    if (submit) {
-      submit.disabled = true;
-      submit.textContent = "Wird gesendet…";
-    }
+    const href = "mailto:hallo@kehrwerk.at?subject=" +
+      encodeURIComponent("Angebot anfordern – " + (data.Betrieb || "Kehrwerk")) +
+      "&body=" + encodeURIComponent(lines.join("\r\n"));
 
-    fetch("https://formsubmit.co/ajax/hallo@kehrwerk.at", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(data)
-    }).then(function (response) {
-      return response.json().then(function (body) {
-        return { ok: response.ok, body: body };
-      });
-    }).then(function (result) {
-      const message = (result.body && (result.body.message || result.body.success)) || "";
-      const success = result.ok && String(message).toLowerCase().indexOf("error") === -1 && result.body && (result.body.success === true || result.body.success === "true");
-      if (!success) throw new Error("send failed");
-      if (fields) fields.hidden = true;
-      status.hidden = false;
-      status.className = "form-status ok";
-      status.textContent = "Danke. Wir haben Ihre Anfrage erhalten und melden uns persönlich.";
-    }).catch(function () {
-      if (submit) {
-        submit.disabled = false;
-        submit.textContent = "Angebot anfordern";
-      }
-      status.hidden = false;
-      status.className = "form-status err";
-      status.innerHTML = "Die Anfrage konnte nicht gesendet werden. Bitte schreiben Sie an <a href=\"mailto:hallo@kehrwerk.at\">hallo@kehrwerk.at</a>.";
-    });
+    status.hidden = false;
+    status.className = "form-status";
+    status.textContent = "Ihr E-Mail-Programm öffnet die Nachricht. Bitte dort auf Senden tippen, damit sie bei uns ankommt. ";
+    const again = document.createElement("a");
+    again.href = href;
+    again.textContent = "Erneut öffnen";
+    status.appendChild(again);
+
+    const opener = document.createElement("a");
+    opener.href = href;
+    opener.click();
   });
 })();

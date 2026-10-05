@@ -39,8 +39,7 @@
     <symbol id="i-call" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   </svg>
 
-  <div class="hero-shell">
-    <header class="site-header">
+  <header class="site-header">
       <div class="wrap header-row">
         <a class="brand" href="index.html">
           <img src="assets/logo/mark-inverse.svg" alt="" width="32" height="32">
@@ -51,19 +50,18 @@
           <a href="#funktionen">Funktionen</a>
           <a href="#mitreden">Mitreden</a>
           <a href="#leistungen">Leistungen</a>
-          <span>FAQ</span>
         </nav>
         <div class="header-actions">
           <span class="login-label">Anmelden</span>
-          <a class="btn btn-accent header-demo js-demo" href="#angebot">Live-Demo</a>
           <a class="header-offer" href="#angebot">Angebot</a>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Menü öffnen">
             <svg class="icon" width="24" height="24"><use href="#i-menu"/></svg>
           </button>
         </div>
       </div>
-    </header>
+  </header>
 
+  <div class="hero-shell">
     <div class="wrap hero">
       <div class="hero-grid">
         <div>
@@ -72,10 +70,8 @@
           <p class="lede lede-mobile">Die einfache Cloud-Software für Ihren Betrieb: Planung nach Straßen, Kehr-App fürs Handy und Rechnungen.</p>
           <p class="lede lede-desktop">Kehrwerk ist die einfache Cloud-Software für Ihren Betrieb: Planung nach Straßen, Kehr-App fürs Handy und Rechnungen – ohne Server im Büro, ohne Updates am Wochenende.</p>
           <div class="hero-actions">
-            <a class="btn btn-accent desktop-cta js-demo" href="#angebot">Live-Demo ansehen <svg class="icon"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-ghost desktop-cta" href="#angebot">Angebot anfordern</a>
-            <a class="btn btn-accent mobile-cta" href="#angebot">Angebot anfordern <svg class="icon"><use href="#i-arrow"/></svg></a>
-            <a class="btn btn-ghost mobile-cta" href="#angebot">Gespräch vereinbaren</a>
+            <a class="btn btn-accent" href="#angebot">Angebot anfordern <svg class="icon"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="#angebot">Gespräch vereinbaren</a>
           </div>
           <ul class="checks">
             <li><svg class="icon"><use href="#i-check"/></svg>Tarife aller 9 Bundesländer</li>
@@ -84,6 +80,7 @@
           </ul>
         </div>
 
+        <div class="stage-frame">
         <div class="stage" aria-hidden="true">
           <div class="desk">
             <aside class="desk-side">
@@ -160,6 +157,7 @@
               <div class="home-bar"></div>
             </div>
           </div>
+        </div>
         </div>
         <p class="device-caption">Die Außendienst-App – auch offline</p>
       </div>
@@ -242,8 +240,8 @@
           <span class="badge">Datenübernahme als Service</span>
           <h3>Das übernehmen wir für Sie</h3>
           <ul class="tick">
-            <li><svg class="icon"><use href="#i-check"/></svg>Kunden und Bewohner</li>
-            <li><svg class="icon"><use href="#i-check"/></svg>Objekte und Adressen, amtlich abgeglichen</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Kundenstammdaten</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>Daten von Gebäuden und Adressen</li>
             <li><svg class="icon"><use href="#i-check"/></svg>Einrichtungen wie Fänge und Feuerstätten</li>
             <li><svg class="icon"><use href="#i-check"/></svg>Service-Historie aus der bisherigen Software</li>
           </ul>
@@ -320,7 +318,7 @@
         <p class="soft-pill"><svg class="icon"><use href="#i-mountain"/></svg>AUS OSTTIROL</p>
         <h2>Mitreden statt<span class="line">nur nutzen.</span></h2>
         <p class="kicker">Aus Osttirol – mit Betrieben entwickelt.</p>
-        <p class="intro">Kehrwerk entsteht in Osttirol, gemeinsam mit Rauchfangkehrer-Betrieben – nicht am Reißbrett. Was Sie im Alltag brauchen, fließt direkt in die Software ein. Hier reden Sie mit.</p>
+        <p class="intro">Kehrwerk entsteht in Osttirol, gemeinsam mit Rauchfangkehrer-Betrieben. Was Sie im Alltag brauchen, fließt direkt in die Software ein. Hier reden Sie mit.</p>
         <a class="btn btn-soot" href="#angebot">Gespräch vereinbaren</a>
       </div>
       <div class="story">
@@ -362,7 +360,6 @@
             <h3>Preis auf Anfrage</h3>
             <p class="sub">Ihr Angebot – passend zu Ihrem Betrieb</p>
             <hr>
-            <p class="price-note">Sie erhalten ein schriftliches Angebot für Ihren Betrieb. Die Datenübernahme aus Ihrer bisherigen Software wird darin individuell kalkuliert.</p>
             <div class="price-actions">
               <a class="btn btn-accent" href="#angebot">Angebot anfordern</a>
               <a class="btn btn-ghost" href="#angebot">Gespräch vereinbaren</a>
@@ -373,68 +370,80 @@
             <ul class="tick cols">
               <li><svg class="icon"><use href="#i-check"/></svg>Außendienst-App für iPhone &amp; Android</li>
               <li><svg class="icon"><use href="#i-check"/></svg>Abgleich mit amtlichem Adressregister</li>
-              <li><svg class="icon"><use href="#i-check"/></svg>Büro-Web-App im Browser</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>Büro-App im Browser</li>
               <li><svg class="icon"><use href="#i-check"/></svg>Fotos &amp; Mängel</li>
               <li><svg class="icon"><use href="#i-check"/></svg>Planung nach Straßen</li>
               <li><svg class="icon"><use href="#i-check"/></svg><span class="hot">7 Jahre Daten- &amp; Rechnungsarchiv</span></li>
-              <li><svg class="icon"><use href="#i-check"/></svg>Rechnungen mit Erlagschein oder QR</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>Rechnungen</li>
               <li><svg class="icon"><use href="#i-check"/></svg>Regelmäßige Backups &amp; Updates</li>
-              <li><svg class="icon"><use href="#i-check"/></svg>Tarife inkl. Kundentarife (z.&nbsp;B. ÖBB)</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>Bundesland-Tarife inkl. Kundentarife (z.&nbsp;B. ÖBB)</li>
               <li><svg class="icon"><use href="#i-check"/></svg>Online-Einschulung &amp; Support auf Deutsch</li>
-              <li><svg class="icon"><use href="#i-check"/></svg>Berichte &amp; Export nach Excel</li>
+              <li><svg class="icon"><use href="#i-check"/></svg>Berichte &amp; Daten-Export nach Excel</li>
               <li><svg class="icon"><use href="#i-check"/></svg>EU-Hosting &amp; DSGVO</li>
             </ul>
             <p class="fine">Kein Server im Büro, keine Updates am Wochenende, keine Aufpreise für Funktionen.</p>
           </div>
         </div>
       </div>
-      <aside class="archive">
-        <div class="archive-top">
-          <span class="archive-ico"><svg class="icon"><use href="#i-archive"/></svg></span>
-          <span class="badge">Aufbewahrungspflicht § 132 BAO</span>
-        </div>
-        <h3>7 Jahre Daten- und Rechnungsarchivierung inklusive</h3>
-        <p>Rechnungen, Leistungen und Service-Historie bleiben gesetzeskonform archiviert – mit regelmäßigen Backups in der EU.</p>
-        <p class="solid">Kein eigener Server, kein Ordner im Keller.</p>
+      <aside class="promise">
+        <p class="eyebrow hot">SERVICE</p>
+        <h3>Wir lassen niemanden hängen.</h3>
+        <ul>
+          <li>
+            <span class="promise-ico"><svg class="icon"><use href="#i-shield"/></svg></span>
+            <strong>Verlässlich</strong>
+            <p>Was wir zusagen, gilt.</p>
+          </li>
+          <li>
+            <span class="promise-ico"><svg class="icon"><use href="#i-chat"/></svg></span>
+            <strong>Wir kümmern uns</strong>
+            <p>Um die Anliegen unserer Kunden.</p>
+          </li>
+          <li>
+            <span class="promise-ico"><svg class="icon"><use href="#i-users"/></svg></span>
+            <strong>Niemand bleibt liegen</strong>
+            <p>Wer sich meldet, bekommt eine Antwort.</p>
+          </li>
+        </ul>
       </aside>
     </div>
   </section>
 
-  <section class="section" id="angebot" style="padding-top:0">
+  <section class="section" id="angebot">
     <div class="wrap">
       <div class="offer">
         <div class="offer-grid">
           <div>
             <h2>Angebot anfordern</h2>
-            <p class="quiet">Erzählen Sie uns kurz von Ihrem Betrieb. Wir melden uns persönlich – mit einem Angebot inklusive Datenübernahme und auf Wunsch einem Zugang zur Live-Demo mit Beispieldaten.</p>
+            <p class="quiet">Erzählen Sie uns kurz von Ihrem Betrieb. Wir melden uns persönlich – mit einem Angebot inklusive Datenübernahme.</p>
             <ul class="checks">
               <li><svg class="icon"><use href="#i-check"/></svg>Unverbindlich</li>
               <li><svg class="icon"><use href="#i-check"/></svg>Ansprechpartner aus der Region</li>
             </ul>
             <p class="personal">Lieber persönlich? <a href="#angebot">Gespräch vereinbaren <svg class="icon"><use href="#i-arrow"/></svg></a></p>
           </div>
-          <form id="offer" action="https://formsubmit.co/hallo@kehrwerk.at" method="POST">
+          <form id="offer" action="mailto:hallo@kehrwerk.at" method="POST" enctype="text/plain">
             <p class="form-status" id="form-status" role="status" hidden></p>
-            <input type="hidden" name="_subject" value="Angebot anfordern – Kehrwerk">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_captcha" value="false">
-            <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="fields">
               <label class="field">
-                <span>Name</span>
-                <input name="Name" type="text" autocomplete="name" placeholder="Josef Mayr" required>
+                <span>Name <abbr class="req" title="Pflichtfeld">*</abbr></span>
+                <input name="Name" type="text" autocomplete="name" placeholder="Josef Mustermann" required>
               </label>
               <label class="field">
-                <span>Betrieb</span>
-                <input name="Betrieb" type="text" autocomplete="organization" placeholder="Rauchfangkehrerei Mayr" required>
+                <span>Betrieb <abbr class="req" title="Pflichtfeld">*</abbr></span>
+                <input name="Betrieb" type="text" autocomplete="organization" placeholder="Rauchfangkehrerei Mustermann" required>
               </label>
               <label class="field">
-                <span>E-Mail oder Telefon</span>
-                <input name="Kontakt" type="text" autocomplete="on" placeholder="office@…" required>
+                <span>E-Mail <abbr class="req" title="Pflichtfeld">*</abbr></span>
+                <input name="E-Mail" type="email" autocomplete="email" placeholder="office@…" required>
+              </label>
+              <label class="field">
+                <span>Telefon <abbr class="req" title="Pflichtfeld">*</abbr></span>
+                <input name="Telefon" type="tel" autocomplete="tel" placeholder="+43 …" required>
               </label>
               <label class="field">
                 <span>Bundesland</span>
-                <select name="Bundesland" required>
+                <select name="Bundesland">
                   <option value="" selected disabled hidden>Tirol</option>
                   <option>Burgenland</option>
                   <option>Kärnten</option>
@@ -455,9 +464,9 @@
                 <span>Bisherige Software</span>
                 <input name="Bisherige Software" type="text" placeholder="z. B. WinChim">
               </label>
-              <label class="consent span-2">
-                <input id="demo" name="Live-Demo" type="checkbox" value="Ja">
-                Zugang zur Live-Demo mitschicken
+              <label class="field span-2">
+                <span>Ihre Nachricht an uns</span>
+                <textarea name="Nachricht" rows="2" placeholder="Worum geht es?"></textarea>
               </label>
               <button class="btn btn-accent span-2" type="submit">Angebot anfordern</button>
             </div>
@@ -488,16 +497,6 @@
     </div>
   </footer>
 
-  <div class="dock">
-    <a class="btn btn-accent" href="#angebot">Angebot anfordern</a>
-    <button class="icon-btn" type="button" aria-label="Anruf">
-      <svg class="icon"><use href="#i-call"/></svg>
-    </button>
-    <a class="icon-btn" href="mailto:hallo@kehrwerk.at" aria-label="E-Mail an hallo@kehrwerk.at">
-      <svg class="icon"><use href="#i-mail"/></svg>
-    </a>
-  </div>
-
   <div class="nav-panel" id="nav-panel">
     <div class="nav-panel-top">
       <a class="brand" href="index.html">
@@ -513,7 +512,6 @@
       <a href="#funktionen">Funktionen</a>
       <a href="#mitreden">Mitreden</a>
       <a href="#leistungen">Leistungen</a>
-      <span class="nav-static">FAQ</span>
     </nav>
   </div>
 
